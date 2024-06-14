@@ -13,7 +13,7 @@ function Payment() {
             try {
                 const token = localStorage.getItem('token'); // Retrieve the token from local storage
                 const userId = localStorage.getItem("_id"); // Retrieve the user ID from local storage
-                const response = await axios.get(`http://localhost:5000/booking/user/${userId}`, {
+                const response = await axios.get(`https://e-ticket-server-black.vercel.app/booking/user/${userId}`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -37,7 +37,7 @@ function Payment() {
     const handleRemoveBooking = async (bookingId) => {
         try {
             const token = localStorage.getItem('token');
-            await axios.delete(`http://localhost:5000/booking/${bookingId}`, {
+            await axios.delete(`https://e-ticket-server-black.vercel.app/booking/${bookingId}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -70,7 +70,7 @@ function Payment() {
                 cancel_url: " http://localhost:5173/payment-cancel"
             };
 
-            const response = await axios.get("http://localhost:5000/init", data, {
+            const response = await axios.get("https://e-ticket-server-black.vercel.app/init", data, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

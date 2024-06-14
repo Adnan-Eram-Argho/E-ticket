@@ -11,7 +11,7 @@ function Home() {
       const fetchEvents = async () => {
         try {
           const token = localStorage.getItem('token'); // Retrieve the token from local storage
-          const response = await axios.get('http://localhost:5000/event', {
+          const response = await axios.get('https://e-ticket-server-black.vercel.app/event', {
             headers: {
               Authorization: `Bearer ${token}`
             }

@@ -30,7 +30,7 @@ function Login() {
                     password: data.password
                 };
 
-                const result = await axios.post("http://localhost:5000/user/login", userData);
+                const result = await axios.post("https://e-ticket-server-black.vercel.app/user/login", userData);
                 if (result?.data?.token) {
                     localStorage.setItem('token', result.data.token);
                     localStorage.setItem('_id', result.data._id);

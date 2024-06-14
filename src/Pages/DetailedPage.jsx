@@ -15,7 +15,7 @@ function DetailedPage() {
       const fetchEvent = async () => {
         try {
           const token = localStorage.getItem('token'); // Retrieve the token from local storage
-          const response = await axios.get(`http://localhost:5000/event/${id}`, {
+          const response = await axios.get(`https://e-ticket-server-black.vercel.app/event/${id}`, {
             headers: {
               Authorization: `Bearer ${token}`
             }
@@ -35,7 +35,7 @@ function DetailedPage() {
       try {
         const token = localStorage.getItem('token'); // Retrieve the token from local storage
         const response = await axios.post(
-          'http://localhost:5000/booking',
+          'https://e-ticket-server-black.vercel.app/booking',
           { eventId: id, numberOfTickets },
           {
             headers: {

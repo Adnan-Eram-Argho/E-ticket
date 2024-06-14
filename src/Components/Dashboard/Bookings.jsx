@@ -12,7 +12,7 @@ function Bookings() {
         const fetchBookings = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await axios.get(`http://localhost:5000/booking/event/${id}`, {
+                const response = await axios.get(`https://e-ticket-server-black.vercel.app/booking/event/${id}`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
